@@ -31,7 +31,7 @@
     <issue>https://github.com/initialxy/cordova-plugin-themeablebrowser/issues</issue>
 
     <engines>
-      <engine name="cordova" version=">=10.1.2" />
+      <engine name="cordova" version=">=10.0.0" />
     </engines>
 
     <!-- android -->
