@@ -145,7 +145,9 @@ public class ThemeableBrowser extends CordovaPlugin {
                             shouldAllowNavigation = true;
                         }
                         if (shouldAllowNavigation == null) {
-                            shouldAllowNavigation = new AllowList().isUrlWhiteListed(url);
+                            Method gwl = webView.getClass().getMethod("getWhitelist");
+                            AllowList whitelist = (AllowList)gwl.invoke(webView);
+                            shouldAllowRequest = whitelist.isUrlAllowListed(url);
                         }
                         if (shouldAllowNavigation == null) {
                             try {
