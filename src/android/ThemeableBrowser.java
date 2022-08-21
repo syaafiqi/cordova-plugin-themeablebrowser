@@ -68,7 +68,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginManager;
 import org.apache.cordova.PluginResult;
-import org.apache.cordova.Whitelist;
+import org.apache.cordova.AllowList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -145,7 +145,7 @@ public class ThemeableBrowser extends CordovaPlugin {
                             shouldAllowNavigation = true;
                         }
                         if (shouldAllowNavigation == null) {
-                            shouldAllowNavigation = new Whitelist().isUrlWhiteListed(url);
+                            shouldAllowNavigation = new AllowList().isUrlWhiteListed(url);
                         }
                         if (shouldAllowNavigation == null) {
                             try {
